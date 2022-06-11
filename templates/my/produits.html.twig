@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<h1>Produits</h1>
+
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">reference</th>
+        <th scope="col">libelle</th>
+        <th scope="col">marque</th>
+        <th scope="col">actif</th>
+      </tr>
+    </thead>
+    {% for NumCol in data %}
+    <tr>
+        <td>{{ NumCol.id}}</td>
+        <td>{{ NumCol.reference}}</td>
+        <td>{{ NumCol.libelle}}</td>
+        <td>{{ NumCol.marque}}</td>
+        <td>{{ NumCol.actif}}</td>
+      </tr>
+      {% endfor %}
+</table>
+<form action="POST">
+    <div class="form-group">
+        <label class="col-form-label mt-4" for="inputDefault">Id fournisseur</label>
+        <input type="text" class="form-control" placeholder="Default input" id="poidfournisseur">
+    </div>
+      
+    <div class="form-group">
+        <label for="formFile" class="form-label mt-4">CSV</label>
+        <input class="form-control" type="file" id="pocsv">
+    </div>
+        <br>
+    <button type="button" class="btn btn-primary">Ajouter</button>
+</form>
+
+{% endblock %}

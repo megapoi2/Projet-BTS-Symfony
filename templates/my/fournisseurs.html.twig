@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<h1>Fournisseurs</h1>
+
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">societe</th>
+        <th scope="col">civilite</th>
+        <th scope="col">nom</th>
+        <th scope="col">prenom</th>
+        <th scope="col">email</th>
+        <th scope="col">adresse</th>
+        <th scope="col">actif</th>
+      </tr>
+    </thead>
+    {% for NumCol in data %}
+      <tr>
+          <td> {{ NumCol.id}}</td>
+          <td> {{ NumCol.societe}}</td>
+          <td> {{ NumCol.civilite}}</td>
+          <td> {{ NumCol.nom}}</td>
+          <td> {{ NumCol.prenom}}</td>
+          <td> {{ NumCol.email}}</td>
+          <td> {{ NumCol.adresse}}</td>
+          <td> {{ NumCol.actif}}</td>
+      </tr>
+
+    {% endfor %}
+</table>
+
+<form action="POST">
+    <div class="form-group">
+        <label class="col-form-label mt-4" for="inputDefault">Societe</label>
+        <input type="text" class="form-control" placeholder="Default input" id="fosociete">
+        </div>
+        <div class="form-group">
+        <label class="col-form-label mt-4" for="inputDefault">Civilite</label>
+        <input type="text" class="form-control" placeholder="Default input" id="focivilite">
+        </div>
+        <div class="form-group">
+        <label class="col-form-label mt-4" for="inputDefault">Nom</label>
+        <input type="text" class="form-control" placeholder="Default input" id="fonom">
+        </div>
+        <div class="form-group">
+        <label class="col-form-label mt-4" for="inputDefault">Prenom</label>
+        <input type="text" class="form-control" placeholder="Default input" id="foprenom">
+        </div>
+        <div class="form-group">
+        <label class="col-form-label mt-4" for="inputDefault">Adresse</label>
+        <input type="text" class="form-control" placeholder="Default input" id="foaddresse">
+        </div>
+        <div class="form-group">
+        <label class="col-form-label mt-4" for="inputDefault">Date d'adhesion</label>
+        <input type="text" class="form-control" placeholder="Default input" id="fodate">
+        </div>
+        <div class="form-group">
+        <label class="col-form-label mt-4" for="inputDefault">Actif</label>
+        <input type="text" class="form-control" placeholder="Default input" id="foacctif">
+        </div>
+        <br>
+    <button type="button" class="btn btn-primary">Ajouter</button>
+</form>
+
+{% endblock %}
